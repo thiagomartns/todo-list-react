@@ -1,0 +1,70 @@
+@import '/src/global.scss';
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  width: 100vw;
+
+  .tasksCounter {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: space-around;
+    font: $bold-1;
+
+    .tasksCreated {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+
+      p {
+        color: $blue;
+      }
+    }
+
+    .tasksCompleted {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+
+      p {
+        color: $purple;
+      }
+    }
+  }
+
+  .counterSpan {
+    color: $gray-100;
+    padding: 2px 8px;
+    background-color: $gray-500;
+    border-radius: 999px;
+  }
+
+  .tasksAppContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+    gap: .5rem;
+
+    img {
+      margin-bottom: 1rem;
+    }
+
+    .noTask-1 {
+      font: $bold-1;
+      color: $gray-300;
+    }
+
+    .noTask-2 {
+      font: $regular-1;
+      color: $gray-300;
+    }
+  }
+}
