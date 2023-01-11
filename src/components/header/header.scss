@@ -1,0 +1,15 @@
+@import '../../global.scss';
+
+.header {
+  background-color: $gray-700;
+  // height: 15vh;
+  width: 100vw;
+
+  .imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+    height: 15vh;
+  }
+}
