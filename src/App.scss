@@ -1,3 +1,5 @@
+@import '/src/global.scss';
+
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +8,9 @@
 
 .App {
   height: 100vh;
+
+  .appContainer {
+    height: calc(100vh - 15vh);
+    background-color: $gray-600;
+  }
 }

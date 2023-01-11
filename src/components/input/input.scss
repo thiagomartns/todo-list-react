@@ -1,0 +1,36 @@
+@import '../../global.scss';
+
+.input {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  padding-top: 1rem;
+  box-shadow: inset 0 42px $gray-700;
+
+  input {
+    width: 638px;
+    height: 54px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: $gray-500;
+    border: 1px solid $gray-700;
+    color: $gray-100;
+    outline: none;
+  }
+
+  .inputBtn {
+    // width: 90px;
+    height: 52px;
+    border-radius: 8px;
+    background-color: $blue-dark;
+    padding: 16px;
+    color: $gray-100;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+  }
+}
