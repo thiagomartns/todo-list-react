@@ -15,9 +15,11 @@ const Tasks = () => {
         </div>
       </div>
       <div className="tasksAppContainer">
-        <img src="/assets/img/ClipBoard.svg" alt="" />
-        <p className='noTask-1'>Você ainda não tem tarefas cadastradas</p>
-        <p className='noTask-2'>Crie tarefas e organize seus itens a fazer</p>
+        <div className="emptyTasksContainer">
+          <img src="/assets/img/ClipBoard.svg" alt="" />
+          <p className='noTask-1'>Você ainda não tem tarefas cadastradas</p>
+          <p className='noTask-2'>Crie tarefas e organize seus itens a fazer</p>
+        </div>
       </div>
     </div>
   )
