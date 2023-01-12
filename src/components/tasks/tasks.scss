@@ -46,24 +46,33 @@
   }
 
   .tasksAppContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 2rem;
-    gap: .5rem;
+    width: 55%;
+
+    .emptyTasksContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 0;
+      border-top: 1px solid $gray-400;
+      border-radius: 10px;
+      margin-top: 2rem;
+      gap: .5rem;
+      width: 100%;
+  }
+
 
     img {
       margin-bottom: 1rem;
     }
 
     .noTask-1 {
-      font: $bold-1;
+      font: $bold-3;
       color: $gray-300;
     }
 
     .noTask-2 {
-      font: $regular-1;
+      font: $regular-3;
       color: $gray-300;
     }
   }
