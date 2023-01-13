@@ -31,8 +31,8 @@ const Tasks = ({ newTask, setNewTask, tasksArray, setTasksArray }) => {
           <div className='tasksContainer'>
             {tasksArray.map((task, index) => (
               <div key={index} className='tasksContainerItem'>
-                <input type="radio" />
-                <p>{task}</p>
+                <input id='test' type="radio" />
+                <label htmlFor="test">{task}</label>
                 <BsTrash className='icon' onClick={() => deleteTask(index)} />
               </div>
           ))}
