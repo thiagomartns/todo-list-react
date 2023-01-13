@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './tasks.scss'
 import { BsTrash } from 'react-icons/bs'
 
-const Tasks = ({ newTask, setNewTask, tasksArray, setTasksArray }) => {
+const Tasks = ({ tasksArray, setTasksArray }) => {
+
+  const [selectedTask, setSelectedTask] = useState([]);
+
+
 
   const deleteTask = (index) => {
     setTasksArray(tasksArray.filter((task, i) => i !== index))
@@ -17,7 +21,7 @@ const Tasks = ({ newTask, setNewTask, tasksArray, setTasksArray }) => {
         </div>
         <div className="tasksCompleted">
           <p>Concluídas</p>
-          <span className='counterSpan'>0 de {tasksArray.length}</span>
+          <span className='counterSpan'>{selectedTask.length} de {tasksArray.length}</span>
         </div>
       </div>
       <div className="tasksAppContainer">
@@ -31,8 +35,8 @@ const Tasks = ({ newTask, setNewTask, tasksArray, setTasksArray }) => {
           <div className='tasksContainer'>
             {tasksArray.map((task, index) => (
               <div key={index} className='tasksContainerItem'>
-                <input id='test' type="radio" />
-                <label htmlFor="test">{task}</label>
+                <input type="checkbox"  checked={selectedTask.includes(index)} onChange={() => setSelectedTask(prevState => prevState.includes(index) ? prevState.filter(item => item !== index) : [...prevState,index])} />
+                <label style={{ textDecoration: selectedTask.includes(index) ? 'line-through' : 'none' }}>{task}</label>
                 <BsTrash className='icon' onClick={() => deleteTask(index)} />
               </div>
           ))}
