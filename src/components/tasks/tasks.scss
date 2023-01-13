@@ -92,6 +92,13 @@
 
       .icon {
         cursor: pointer;
+        width: 14px;
+        height: 14px;
+
+        &:hover {
+          color: $danger;
+          background-color: $gray-400;
+        }
       }
     }
   }
