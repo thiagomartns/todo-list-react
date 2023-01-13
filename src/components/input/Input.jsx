@@ -4,8 +4,9 @@ import { BsPlusCircle } from 'react-icons/bs'
 
 const Input = ({ newTask, setNewTask, tasksArray, setTasksArray }) => {
 
-  const handleClick = () => {
+  const handleClick = (e) => {
     if (newTask) {
+      e.preventDefault()
       setTasksArray([...tasksArray, newTask])
       setNewTask('')
     }
@@ -13,11 +14,13 @@ const Input = ({ newTask, setNewTask, tasksArray, setTasksArray }) => {
 
   return (
     <div className='input'>
-      <input type="text" placeholder='Adicione uma tarefa' value={newTask} onChange={(e) => setNewTask(e.target.value)} />
-      <button className='inputBtn' onClick={handleClick}>
-        Criar
-        <BsPlusCircle />
-      </button>
+      <form onSubmit={handleClick}>
+        <input type="text" placeholder='Adicione uma tarefa' value={newTask} onChange={(e) => setNewTask(e.target.value)} />
+        <button className='inputBtn' onClick={handleClick}>
+          Criar
+          <BsPlusCircle />
+        </button>
+      </form>
     </div>
   )
 }
