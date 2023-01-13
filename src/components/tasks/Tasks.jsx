@@ -2,7 +2,12 @@ import React from 'react'
 import './tasks.scss'
 import { BsTrash } from 'react-icons/bs'
 
-const Tasks = ({ tasksArray }) => {
+const Tasks = ({ newTask, setNewTask, tasksArray, setTasksArray }) => {
+
+  const deleteTask = (index) => {
+    setTasksArray(tasksArray.filter((task, i) => i !== index))
+  }
+
   return (
     <div className='tasks'>
       <div className="tasksCounter">
@@ -12,7 +17,7 @@ const Tasks = ({ tasksArray }) => {
         </div>
         <div className="tasksCompleted">
           <p>Concluídas</p>
-          <span className='counterSpan'>0</span>
+          <span className='counterSpan'>0 de {tasksArray.length}</span>
         </div>
       </div>
       <div className="tasksAppContainer">
@@ -28,7 +33,7 @@ const Tasks = ({ tasksArray }) => {
               <div key={index} className='tasksContainerItem'>
                 <input type="radio" />
                 <p>{task}</p>
-                <BsTrash />
+                <BsTrash className='icon' onClick={() => deleteTask(index)} />
               </div>
           ))}
           </div>

@@ -7,14 +7,14 @@ import { useState } from "react";
 function App() {
 
   const [newTask, setNewTask] = useState('')
-  const [tasksArray, setTasksArray] = useState(['Tomar café', 'Estudar JS'])
+  const [tasksArray, setTasksArray] = useState([])
 
   return (
     <div className="App">
       <Header />
       <div className="appContainer">
-        <Input newTask={newTask} setNewTask={setNewTask} />
-        <Tasks tasksArray={tasksArray} />
+        <Input newTask={newTask} setNewTask={setNewTask} tasksArray={tasksArray} setTasksArray={setTasksArray} />
+        <Tasks newTask={newTask} setNewTask={setNewTask} tasksArray={tasksArray} setTasksArray={setTasksArray} />
       </div>
     </div>
   );
