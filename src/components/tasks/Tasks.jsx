@@ -33,14 +33,23 @@ const Tasks = ({ tasksArray, setTasksArray }) => {
         {tasksArray.length > 0 &&
           <div className='tasksContainer'>
             {tasksArray.map((task, index) => (
-              <div key={index} className='tasksContainerItem'>
+              <div 
+                key={index} 
+                className='tasksContainerItem' 
+                style={{  backgroundColor: selectedTask.includes(index) ? '#262626' : '#333333' }}
+              >
                 <input 
                   type="checkbox"
                   className='customCheckbox'
                   checked={selectedTask.includes(index)} 
                   onChange={() => setSelectedTask(prevState => prevState.includes(index) ? prevState.filter(item => item !== index) : [...prevState, index])} 
                 />
-                <label style={{ textDecoration: selectedTask.includes(index) ? 'line-through' : 'none' }}>{task}</label>
+                <label style={{ 
+                  textDecoration: selectedTask.includes(index) ? 'line-through' : 'none'
+                 }}
+                >
+                  {task}
+                </label>
                 <BsTrash className='icon' onClick={() => deleteTask(index)} />
               </div>
             ))}
